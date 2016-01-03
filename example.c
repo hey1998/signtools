@@ -193,7 +193,7 @@ int main(int argc, char **argv)
 		void *p;
 		int status;
 		if (!mz_zip_reader_file_stat(&zip_in, i, &file_stat)) {
-			printf("ZipException: error in reading zip file\n");
+			fprintf(stderr, "ZipException: error in reading zip file\n");
 			goto err;
 		}
 		if (mz_zip_reader_is_file_a_directory(&zip_in, i) || checkPrefix(file_stat.m_filename, "META-INF"))
